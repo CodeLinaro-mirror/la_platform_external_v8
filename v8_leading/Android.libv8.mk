@@ -63,9 +63,7 @@ LOCAL_CFLAGS += \
 	-DENABLE_DEBUGGER_SUPPORT \
 	-O3
 
-ifeq ($(TARGET_ARCH_VARIANT),armv5te-vfp)
-LOCAL_CFLAGS += -mno-thumb
-else
+ifneq ($(TARGET_ARCH_VARIANT),armv5te-vfp)
 LOCAL_CFLAGS += -DCAN_USE_UNALIGNED_ACCESSES
 endif
 
