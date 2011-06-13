@@ -33,13 +33,7 @@ ifeq ($(TARGET_ARCH),arm)
     ifneq ($(TARGET_ARCH_VARIANT),armv6k-vfp)
     	ENABLE_V8_SNAPSHOT = true
     endif
-    ifeq ($(USE_DEFAULT_JS_ENGINE),true)
-        include $(BASE_PATH)/Android.mksnapshot.mk
-        include $(BASE_PATH)/Android.libv8.mk
-        include $(BASE_PATH)/Android.v8shell.mk
-    else
-        include $(BASE_PATH)/v8_leading/Android.mksnapshot.mk
-        include $(BASE_PATH)/v8_leading/Android.libv8.mk
-        include $(BASE_PATH)/v8_leading/Android.v8shell.mk
-    endif
+    include $(BASE_PATH)/Android.mksnapshot.mk
+    include $(BASE_PATH)/Android.libv8.mk
+    include $(BASE_PATH)/Android.v8shell.mk
 endif
