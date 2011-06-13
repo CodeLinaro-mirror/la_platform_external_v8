@@ -54,10 +54,19 @@ LOCAL_CFLAGS := \
 	-Wno-endif-labels \
 	-Wno-import \
 	-Wno-format \
+	-Wno-psabi \
 	-ansi \
 	-fno-rtti \
 	-DENABLE_DEBUGGER_SUPPORT \
-	-DV8_NATIVE_REGEXP
+	-DENABLE_LOGGING_AND_PROFILING \
+	-DENABLE_VMSTATE_TRACKING \
+	-DV8_NATIVE_REGEXP \
+	-DV8_MAX_SEMISPACE_SIZE=4194304 \
+	-O3
+
+ifneq ($(TARGET_ARCH_VARIANT),armv7-a-neon)
+	LOCAL_CFLAGS += -DCAN_USE_UNALIGNED_ACCESSES
+endif
 
 ifeq ($(TARGET_ARCH),arm)
   LOCAL_CFLAGS += -DV8_TARGET_ARCH_ARM
