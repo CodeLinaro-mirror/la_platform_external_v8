@@ -30,7 +30,7 @@ include $(CLEAR_VARS)
 # Build libv8 and v8shell
 # TODO: remove the check when the v8 build is fixed for x86
 ifeq ($(TARGET_ARCH),arm)
-    ifneq ($(TARGET_ARCH_VARIANT),armv5te-vfp)
+    ifneq ($(TARGET_ARCH_VARIANT),armv6k-vfp)
     	ENABLE_V8_SNAPSHOT = true
     endif
     ifeq ($(USE_DEFAULT_JS_ENGINE),true)
