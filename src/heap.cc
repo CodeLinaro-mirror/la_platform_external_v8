@@ -78,7 +78,7 @@ Heap::Heap()
       reserved_semispace_size_(4 * Max(LUMP_OF_MEMORY, Page::kPageSize)),
       max_semispace_size_(4 * Max(LUMP_OF_MEMORY, Page::kPageSize)),
       initial_semispace_size_(Page::kPageSize),
-      max_old_generation_size_(192*MB),
+      max_old_generation_size_(32*MB),
       max_executable_size_(max_old_generation_size_),
 #else
       reserved_semispace_size_(8 * Max(LUMP_OF_MEMORY, Page::kPageSize)),
