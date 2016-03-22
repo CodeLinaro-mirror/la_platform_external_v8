@@ -100047,4 +100047,5 @@ Vector<const PrecomputedPrecision> PrecomputedPrecisionRepresentations() {
                                             number_elements);
 }
 
-} }  // namespace v8::internal
+}  // namespace internal
+}  // namespace v8
